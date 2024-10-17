@@ -1,5 +1,9 @@
 import "./App.css";
-import avatar from "./assets/avatar.png";
+import avatarUrl from "./assets/avatar.png";
+const employee = {
+  name: "John Doe",
+  department: "IT",
+};
 
 function TestButton() {
   return (
@@ -15,8 +19,10 @@ function App() {
       <h1>Welcome to Dev React</h1>
       <TestButton />
       <div>
-        <img className="avatar" src={avatar} />
+        <img className="avatar" src={avatarUrl} />
       </div>
+      <p>{employee.name}</p>
+      <p>{employee.department}</p>
     </>
   );
 }
