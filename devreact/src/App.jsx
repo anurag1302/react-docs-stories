@@ -1,5 +1,6 @@
 import "./App.css";
 import avatarUrl from "./assets/avatar.png";
+import Profile from "./components/Profile";
 const employee = {
   name: "John Doe",
   department: "IT",
@@ -23,6 +24,7 @@ function App() {
       </div>
       <p>{employee.name}</p>
       <p>{employee.department}</p>
+      <Profile />
     </>
   );
 }
