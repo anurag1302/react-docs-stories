@@ -4,6 +4,8 @@ import Profile from "./components/Profile";
 import AdminPanel from "./components/AdminPanel";
 import LoginForm from "./components/LoginForm";
 import Products from "./components/Products";
+import MyButton from "./components/MyButton";
+import { useState } from "react";
 
 const employee = {
   name: "John Doe",
@@ -47,6 +49,11 @@ function TestButton() {
 }
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
   return (
     <>
       <h1>Welcome to Dev React</h1>
@@ -65,6 +72,11 @@ function App() {
       </div>
       <div>
         <Products />
+      </div>
+      <div>
+        <h2>Generic buttons with props that have the same state</h2>
+        <MyButton count={count} onClick={handleClick} />
+        <MyButton count={count} onClick={handleClick} />
       </div>
     </>
   );
