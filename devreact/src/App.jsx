@@ -3,6 +3,7 @@ import avatarUrl from "./assets/avatar.png";
 import Profile from "./components/Profile";
 import AdminPanel from "./components/AdminPanel";
 import LoginForm from "./components/LoginForm";
+
 const employee = {
   name: "John Doe",
   department: "IT",
@@ -16,6 +17,27 @@ if (isLoggedIn) {
 } else {
   content = <LoginForm />;
 }
+
+const sports = [
+  {
+    name: "Cricket",
+    id: 1,
+  },
+  {
+    name: "Tennis",
+    id: 2,
+  },
+  {
+    name: "Football",
+    id: 3,
+  },
+];
+
+const sportsList = sports.map((item) => {
+  return <li key={item.id}>{item.name}</li>;
+});
+
+console.log("sportslist", sportsList);
 
 function TestButton() {
   return (
@@ -38,6 +60,10 @@ function App() {
       <Profile />
       {content}
       {isLoggedIn ? <AdminPanel /> : <LoginForm />}
+      <h2>Rendering Lists</h2>
+      <div>
+        <ul>{sportsList}</ul>
+      </div>
     </>
   );
 }
