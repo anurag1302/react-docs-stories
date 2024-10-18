@@ -37,6 +37,7 @@ function App() {
       <p>{employee.department}</p>
       <Profile />
       {content}
+      {isLoggedIn ? <AdminPanel /> : <LoginForm />}
     </>
   );
 }
