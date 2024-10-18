@@ -16,6 +16,10 @@ const products = [
   },
 ];
 
+function handleClick() {
+  console.log("button clicked");
+}
+
 function Products() {
   return (
     <>
@@ -35,6 +39,7 @@ function Products() {
           );
         })}
       </ul>
+      <button onClick={handleClick}>CLICK ME</button>
     </>
   );
 }
