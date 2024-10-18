@@ -1,10 +1,21 @@
 import "./App.css";
 import avatarUrl from "./assets/avatar.png";
 import Profile from "./components/Profile";
+import AdminPanel from "./components/AdminPanel";
+import LoginForm from "./components/LoginForm";
 const employee = {
   name: "John Doe",
   department: "IT",
 };
+
+const isLoggedIn = true;
+
+let content = "";
+if (isLoggedIn) {
+  content = <AdminPanel />;
+} else {
+  content = <LoginForm />;
+}
 
 function TestButton() {
   return (
@@ -25,6 +36,7 @@ function App() {
       <p>{employee.name}</p>
       <p>{employee.department}</p>
       <Profile />
+      {content}
     </>
   );
 }
