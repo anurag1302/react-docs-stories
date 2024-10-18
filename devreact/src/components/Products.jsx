@@ -20,6 +20,10 @@ function handleClick() {
   console.log("button clicked");
 }
 
+function handleClick2(e) {
+  console.log("button2 clicked", e);
+}
+
 function Products() {
   return (
     <>
@@ -40,6 +44,7 @@ function Products() {
         })}
       </ul>
       <button onClick={handleClick}>CLICK ME</button>
+      <button onClick={(e) => handleClick2(e)}>CLICK ME 2</button>
     </>
   );
 }
