@@ -3,6 +3,7 @@ import avatarUrl from "./assets/avatar.png";
 import Profile from "./components/Profile";
 import AdminPanel from "./components/AdminPanel";
 import LoginForm from "./components/LoginForm";
+import Products from "./components/Products";
 
 const employee = {
   name: "John Doe",
@@ -37,8 +38,6 @@ const sportsList = sports.map((item) => {
   return <li key={item.id}>{item.name}</li>;
 });
 
-console.log("sportslist", sportsList);
-
 function TestButton() {
   return (
     <>
@@ -63,6 +62,9 @@ function App() {
       <h2>Rendering Lists</h2>
       <div>
         <ul>{sportsList}</ul>
+      </div>
+      <div>
+        <Products />
       </div>
     </>
   );
