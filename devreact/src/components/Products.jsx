@@ -1,3 +1,4 @@
+import { useState } from "react";
 const products = [
   {
     id: 1,
@@ -25,6 +26,12 @@ function handleClick2(e) {
 }
 
 function Products() {
+  const [count, setCount] = useState(0);
+
+  function handleClickNew() {
+    setCount(count + 1);
+  }
+
   return (
     <>
       <ul>
@@ -43,8 +50,16 @@ function Products() {
           );
         })}
       </ul>
-      <button onClick={handleClick}>CLICK ME</button>
-      <button onClick={(e) => handleClick2(e)}>CLICK ME 2</button>
+      <div>
+        <button onClick={handleClick}>CLICK ME</button>
+      </div>
+      <div>
+        <button onClick={(e) => handleClick2(e)}>CLICK ME 2</button>
+      </div>
+      <div>
+        <button onClick={handleClickNew}>Click for Use State</button>
+        <p>Count : {count}</p>
+      </div>
     </>
   );
 }
